@@ -10,6 +10,7 @@ body{
     object-fit: contain;
 }
 .image_logo{
+    display: flex;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -60,11 +61,10 @@ ul {
 }
 .grid{
     display: flex;
-    justify-content:flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    flex-direction:row;
-    padding: 2px;
-    gap: 5px;
+    flex-direction: row;
+    padding: 10px;
 }
 .card{
     width: 500px;
@@ -75,7 +75,6 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 14px;
 }
 .team_logo{
     width: 40px;
@@ -101,4 +100,17 @@ ul {
 }
 .time{
     padding-left: 90px;
+}
+.dark_mode{
+    background-color: #222222;
+    color: white;
+}
+.card_dark_mode{
+    border: 0.5px solid white;
+}
+@media screen and (max-width: 600px) {
+    .docyard_logo{
+        height: 30px;
+    }
+    
 }

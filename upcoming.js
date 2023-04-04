@@ -2,20 +2,21 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '4e02aa7529mshb2939f2090341c7p1f8815jsnf60e26c0d34e',
-		'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
+		'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
 	}
 };
 
-fetch('https://unofficial-cricbuzz.p.rapidapi.com/matches/list?matchState=upcoming', options)
+fetch('https://cricbuzz-cricket.p.rapidapi.com/matches/v1/upcoming', options)
 	.then(response => response.json())
-	.then(response => { 
-    const matches =response.typeMatches[1].seriesAdWrapper[0].seriesMatches.matches;
+	.then(response =>  { 
+    const matches =response.typeMatches[1].seriesMatches[0].seriesAdWrapper.matches;
+	console.log(matches);
 
 const contanier = document.querySelector('.grid');
 console.log(contanier);
 matches.forEach(match => {
     
-const mat =match.matchInfo;
+const mat =match.matchInfo;	
 
 const first = mat.matchFormat;
 const second = mat.matchDesc;
