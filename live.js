@@ -2,61 +2,104 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '4e02aa7529mshb2939f2090341c7p1f8815jsnf60e26c0d34e',
-		'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
+		'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
 	}
 };
 
-fetch('https://unofficial-cricbuzz.p.rapidapi.com/matches/list?matchState=live', options)
+fetch('https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/66204/overs', options)
 	.then(response => response.json())
 	.then(response => { 
-    const matches =response.typeMatches[1].seriesAdWrapper[0].seriesMatches.matches;
+    const matches =response;
+	console.log(matches);
 
 const contanier = document.querySelector('.grid');
-console.log(contanier);
-matches.forEach(match => {
-    
-const mat =match.matchInfo;
-
-const first = mat.matchFormat;
-const second = mat.matchDesc;
-var headTitle =first + " " +second;
-const date = parseInt(mat.startDate);
-const team1 = mat.team1;
-const team2 = mat.team2;
-const team1Name= team1.teamName;
-const team2Name= team2.teamName;
-const image1= setImage(team1Name);
-const image2= setImage(team2Name);
-
-if(mat.state === "In Progress"){
+// console.log(contanier);
 
 
-const content =` <div class="card">
-<div class="head">
-	<p>${headTitle}</p>
-	<p><b>${new Date(date).toDateString()}</b></p>
+
+const content =`<header class="teamname">
+<p>
+	Punjab Kings <span>Vs</span> Kolkata Knight Riders, 2nd Match - Live
+	Cricket Score, Commentary
+</p>
+</header>
+<div class="livescore">
+<div class="batting_score">
+	<img src="pbks.png" class="team_logo"><h2>PBKs 91/1 (9) <span>CRR:10.03</span></h2>
 </div>
-	<div class="teams">
-		<div class="team1">
-			<img class="team_logo" src="${image1}">
-			<p>${team1Name}</p>
-		</div>
-		<div class="team1">
-			<img class="team_logo" src="${image2}">
-			<p>${team2Name}</p>
-		</div>
-	</div>
-	<div class="time">
-		<p>Starts at ${new Date(date).toLocaleTimeString()}</p>
-	</div>
+<p>Kolkata Knight Riders opt to bowl</p>
+</div>
+<div class="batsman">
+<div class="head">
+	<p>Batsman</p>
+	<ul>
+		<li>R</li>
+		<li>B</li>
+		<li>4s</li>
+		<li>6s</li>
+		<li>SR</li>
+	</ul>
+</div>
+<div class="batter">
+	<p>Shikhar Dhawan *</p>
+	<ul>
+		<li>16</li>
+		<li>13</li>
+		<li>3</li>
+		<li>0</li>
+		<li>121.07</li>
+	</ul>
+</div>
+<div class="batter">
+	<p>Bhanuka Rajapaksa *</p>
+	<ul>
+		<li>44</li>
+		<li>24</li>
+		<li>5</li>
+		<li>2</li>
+		<li>183.33</li>
+	</ul>
+</div>
+</div>
+<div class="bowler">
+<div class="head">
+	<p>Bowler</p>
+	<ul>
+		<li>O</li>
+		<li>M</li>
+		<li>R</li>
+		<li>W</li>
+		<li>ECO</li>
+	</ul>
+</div>
+<div class="thrower">
+	<p>Shardul Thakur *</p>
+	<ul>
+		<li>2</li>
+		<li>0</li>
+		<li>20</li>
+		<li>1</li>
+		<li>10.00</li>
+	</ul>
+</div>
+<div class="thrower">
+	<p>Umesh Yadav *</p>
+	<ul>
+		<li>2</li>
+		<li>0</li>
+		<li>35</li>
+		<li>0</li>
+		<li>17.50</li>
+	</ul>
+</div>
 </div>`;
 
 contanier.innerHTML +=content;
 
 }
-   });
 
-}).catch(err => console.error(err));
+
+).catch(err => console.error(err));
 
     
 function setImage(name) {

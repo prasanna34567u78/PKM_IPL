@@ -10,12 +10,13 @@ fetch('https://cricbuzz-cricket.p.rapidapi.com/matches/v1/recent', options)
 	.then(response => response.json())
 	.then(response =>  { 
     const matches =response.typeMatches[1].seriesMatches[0].seriesAdWrapper.matches;
-console.log(matches);
+// console.log(matches);
 const contanier = document.querySelector('.grid');
-console.log(contanier);
+// console.log(contanier);
 matches.forEach(match => {
     
 const mat =match.matchInfo;
+const math =match.matchInfo.matchId;
 
 const first = mat.matchFormat;
 const second = mat.matchDesc;

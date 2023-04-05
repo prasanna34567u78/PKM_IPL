@@ -2,14 +2,14 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '4e02aa7529mshb2939f2090341c7p1f8815jsnf60e26c0d34e',
-		'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
+		'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
 	}
 };
 
-fetch('https://unofficial-cricbuzz.p.rapidapi.com/matches/list?matchState=live', options)
+fetch('https://cricbuzz-cricket.p.rapidapi.com/matches/v1/live', options)
 	.then(response => response.json())
-	.then(response => { 
-    const matches =response.typeMatches[1].seriesAdWrapper[0].seriesMatches.matches;
+	.then(response =>  { 
+		const matches =response.typeMatches[1].seriesMatches[0].seriesAdWrapper.matches;
 
 const contanier = document.querySelector('.grid');
 console.log(contanier);
@@ -18,7 +18,7 @@ matches.forEach(match => {
 const mat =match.matchInfo;
 const matSc =match.matchScore;
 const run1 =matSc.team1Score.inngs1
-const run2 =matSc.team2Score.inngs1
+const run2 =matSc.team2Score.inngs1 
 const first = mat.matchFormat;
 const second = mat.matchDesc;
 var headTitle =first + " " +second;
@@ -29,10 +29,19 @@ const team1Name= team1.teamName;
 const team2Name= team2.teamName;
 const image1= setImage(team1Name);
 const image2= setImage(team2Name);
+let wickets1 =run1.wickets;
+let wickets2 =run2.wickets;
+if(wickets1 === undefined){
+	wickets1 =0
+}
+if(wickets2 === undefined){
+	wickets2 =0
+}
+
 
 if(mat.state === "In Progress"){
-
-
+	const hid =  document.getElementById('hidden');
+hid.style.display = "none";
 const content =` <div class="card">
 <div class="head">
 	<p>${headTitle}</p>
@@ -42,12 +51,12 @@ const content =` <div class="card">
 		<div class="team1">
 			<img class="team_logo" src="${image1}">
 			<p>${team1Name}</p>
-            ${run1.runs}/${run1.wickets} (${run1.overs}) 
+            ${run1.runs}/${wickets1} (${run1.overs}) 
 		</div>
 		<div class="team1">
 			<img class="team_logo" src="${image2}">
 			<p>${team2Name}</p>
-            ${run2.runs}/${run2.wickets} (${run2.overs})  
+            ${run2.runs}/${wickets2} (${run2.overs})  
 		</div>
 	</div>
 	<div class="time">
@@ -59,10 +68,10 @@ contanier.innerHTML +=content;
 setTimeout(()=>{
     window.location.reload();
     // console.log("prasanna");
-},10000)
+},100000)
 
 }else{
-    contanier.innerHTML = `<h1> Currently no live matches are there <h1>`;
+    contanier.innerHTML = `<h1> Currently no live matches <h1>`;
 }
    });
 
