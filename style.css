@@ -47,6 +47,9 @@ ul {
     flex-direction: row;
     justify-content: space-around;
   }
+#live_score{
+    border-bottom: 1px solid #9e6ea9;
+}
   a{
     display: block;
     color: #9e6ea9;
