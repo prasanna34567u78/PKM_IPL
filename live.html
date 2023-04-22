@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +9,35 @@
     <link rel="website icon" cla5ss="tab_logo" type="png" href="docyardlogobg.png">
     <title>DocYard-Livescore</title>
 </head>
+
 <body>
     <header>
-    <ul>            
-        <a href="https://docyardhq.github.io/Website/" class="image_logo"><img src="docyardbg.png" class="docyard_logo"></a>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>  
+        <ul>
+            <a href="https://docyardhq.github.io/Website/" class="image_logo"><img src="docyardbg.png"
+                    class="docyard_logo"></a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li id="lightMode"><img class="toogleSun" id="toogleSun" src="sun.png" onclick="mode()"></li>
+            <li id="lightMode"><img class="toogleMoon" id="toogleMoon" src="moon.png" onclick="mode()"></li>
+        </ul>
     </header>
     <part-1>
         <div class="options">
-            <a href="index.html">Live</a>
-            <a href="upcoming.html">Upcoming</a>
-            <a href="result.html">Result</a>
+            <a id="live_score" onclick="choose()" href="index.html">Live</a>
+            <a id="upcoming" href="upcoming.html">Upcoming</a>
+            <a id="result" href="result.html">Result</a>
         </div>
     </part-1>
 
     <main>
         <div class="grid">
-            
+
         </div>
-        
+
     </main>
     <script src="live.js"></script>
 </body>
+
 </html>

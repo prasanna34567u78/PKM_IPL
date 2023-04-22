@@ -1,67 +1,85 @@
-body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9fb;
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9fb;
 }
-.docyard_logo{
-    width: 100%;
-    height: 40px;
-    object-fit: contain;
+
+.docyard_logo {
+  width: 100%;
+  height: 40px;
+  object-fit: contain;
 }
-.image_logo{
-    padding-left: 10px;
-    padding-right: 10px;
+
+.image_logo {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #373737;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  li {
-    float: right;
-  }
-  li a {
-    display: block;
-    color: #9e6ea9;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  li a:hover {
-    background-color: #131313;
-  }
-  .options{
-    margin: 30px;
-    background-color: #ffffff;
-    border-radius: 30px;
-    border: 0.6px solid #d4d4d4;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-#live_score{
-    border-bottom: 1px solid #9e6ea9;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #373737;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-  a{
-    display: block;
-    color: #9e6ea9;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.1s;
-  }
-.options a:hover{
-    border-bottom: 1px solid #9e6ea9;
-    position: inherit;
+
+li {
+  float: right;
 }
+
+li a {
+  display: block;
+  color: #9e6ea9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #131313;
+}
+
+.options {
+  margin: 30px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 0.6px solid #d4d4d4;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#live_score {
+  border-bottom: 1px solid #9e6ea9;
+}
+
+#upcoming {
+  border-bottom: 0px;
+}
+
+#result {
+  border-bottom: 0px;
+}
+
+a {
+  display: block;
+  color: #9e6ea9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.options a:hover {
+  border-bottom: 1px solid #9e6ea9;
+  position: inherit;
+}
+
 .teamname {
   padding: 12px 13px;
   background-color: #373737;
@@ -69,30 +87,37 @@ ul {
   font-size: 20px;
   font-weight: 400;
 }
-.team_logo{
+
+.team_logo {
   width: 30px;
   object-fit: contain;
 }
-.batting_score{
+
+.batting_score {
   display: flex;
   gap: 20px;
 }
+
 .livescore {
   margin: 12px 13px;
   font-size: 20px;
   font-weight: 500;
   color: #9e6ea9;
 }
+
 .livescore p {
   color: red;
   margin-top: 15px;
 }
+
 .livescore span {
   font-size: 17px;
 }
+
 .batsman {
   margin: 15px 0;
 }
+
 .head {
   display: flex;
   justify-content: space-around;
@@ -100,6 +125,7 @@ ul {
   color: #9e6ea9;
   padding: 10px;
 }
+
 .head ul {
   list-style-type: none;
   overflow: hidden;
@@ -107,9 +133,11 @@ ul {
   flex-direction: row;
   align-items: center;
 }
+
 .head ul li {
   padding: 0 13px;
 }
+
 .batter {
   display: flex;
   justify-content: space-around;
@@ -117,6 +145,7 @@ ul {
   color: #9e6ea9;
   padding: 10px;
 }
+
 .batter ul {
   list-style-type: none;
   overflow: hidden;
@@ -125,13 +154,16 @@ ul {
   flex-direction: row;
   align-items: center;
 }
+
 .batter ul li {
   font-size: 400;
   padding: 0 13px;
 }
+
 .bowler {
   margin: 15px 0;
 }
+
 .thrower {
   display: flex;
   justify-content: space-around;
@@ -139,6 +171,7 @@ ul {
   color: #9e6ea9;
   padding: 10px;
 }
+
 .thrower ul {
   list-style-type: none;
   overflow: hidden;
@@ -147,7 +180,44 @@ ul {
   flex-direction: row;
   align-items: center;
 }
+
 .thrower ul li {
   font-size: 400;
   padding: 0 13px;
+}
+
+.bdy {
+  background-color: #373737;
+}
+
+.bdy .head>p {
+  color: #9e6ea9;
+}
+
+.bdy .team1>p {
+  color: white;
+}
+
+.bdy p {
+  color: white;
+}
+
+.toogleSun {
+  display: block;
+  position: absolute;
+  width: 30px;
+  z-index: 3;
+  margin-top: -10px;
+  border-radius: 50px;
+  transition: 400ms;
+}
+
+.toogleMoon {
+  display: block;
+  position: absolute;
+  width: 30px;
+  z-index: 2;
+  margin-top: -10px;
+  border-radius: 50px;
+  transition: 400ms;
 }

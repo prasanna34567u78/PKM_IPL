@@ -8,16 +8,16 @@ const options = {
 
 fetch('https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/66204/overs', options)
 	.then(response => response.json())
-	.then(response => { 
-    const matches =response;
-	console.log(matches);
+	.then(response => {
+		const matches = response;
+		console.log(matches);
 
-const contanier = document.querySelector('.grid');
-// console.log(contanier);
+		const contanier = document.querySelector('.grid');
+		// console.log(contanier);
 
 
 
-const content =`<header class="teamname">
+		const content = `<header class="teamname">
 <p>
 	Punjab Kings <span>Vs</span> Kolkata Knight Riders, 2nd Match - Live
 	Cricket Score, Commentary
@@ -94,35 +94,35 @@ const content =`<header class="teamname">
 </div>
 </div>`;
 
-contanier.innerHTML +=content;
+		contanier.innerHTML += content;
 
-}
+	}
 
 
-).catch(err => console.error(err));
+	).catch(err => console.error(err));
 
-    
+
 function setImage(name) {
-	
-	if(name === "Punjab Kings"){
-     return "pbks.png";
-	}else if(name === "Lucknow Super Giants"){
+
+	if (name === "Punjab Kings") {
+		return "pbks.png";
+	} else if (name === "Lucknow Super Giants") {
 		return "lsg.png";
-	}else if(name === "Delhi Capitals"){
+	} else if (name === "Delhi Capitals") {
 		return "dc.png";
-	}else if(name === "Rajasthan Royals"){
+	} else if (name === "Rajasthan Royals") {
 		return "rr.png";
-	}else if(name === "Sunrisers Hyderabad"){
+	} else if (name === "Sunrisers Hyderabad") {
 		return "srh.png";
-	}else if(name === "Kolkata Knight Riders"){
+	} else if (name === "Kolkata Knight Riders") {
 		return "kkr.png";
-	}else if(name === "Royal Challengers Bangalore"){
+	} else if (name === "Royal Challengers Bangalore") {
 		return "rcb.png";
-	}else if(name === "Mumbai Indians"){
+	} else if (name === "Mumbai Indians") {
 		return "mi.png";
-	}else if(name === "Chennai Super Kings"){
+	} else if (name === "Chennai Super Kings") {
 		return "csk.png";
-	}else if(name === "Gujarat Titans"){
+	} else if (name === "Gujarat Titans") {
 		return "gt.png";
 	}
 
@@ -130,3 +130,22 @@ function setImage(name) {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Rohan's Code
+function mode() {
+	var ts = document.getElementById("toogleSun");
+	ts.classList.toggle("toogleMoon");
+	document.body.classList.toggle("bdy");
+}

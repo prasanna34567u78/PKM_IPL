@@ -1,19 +1,22 @@
-body{
+|body {
     padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #f9f9fb;
 }
-.docyard_logo{
+
+.docyard_logo {
     width: 100%;
     height: 40px;
     object-fit: contain;
 }
-.image_logo{
+
+.image_logo {
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -23,21 +26,25 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-  }
-  li {
+}
+
+li {
     float: right;
-  }
-  li a {
+}
+
+li a {
     display: block;
     color: #9e6ea9;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-  li a:hover {
+}
+
+li a:hover {
     background-color: #131313;
-  }
-  .options{
+}
+
+.options {
     margin: 30px;
     background-color: #ffffff;
     border-radius: 30px;
@@ -46,74 +53,140 @@ ul {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-  }
-#upcoming{
+}
+
+#upcoming {
     border-bottom: 1px solid #9e6ea9;
 }
-  a{
+
+a {
     display: block;
     color: #9e6ea9;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     transition: 0.1s;
-  }
-.options a:hover{
+}
+
+.options a:hover {
     border-bottom: 1px solid #9e6ea9;
     position: inherit;
 }
-.grid{
+
+.grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
     padding: 10px;
 }
-.card{
+
+.card {
     width: 500px;
     border: 0.5px solid black;
 }
-.head{
+
+.head {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.team_logo{
+
+.team_logo {
     width: 40px;
     height: 40px;
     object-fit: contain;
 }
-.teams{
+
+.teams {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     padding-left: 90px;
     padding-right: 60px;
 }
-.team1{
+
+.team1 {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 40px;
 }
-.team1 p{
+
+.team1 p {
     font-size: 14px;
 }
-.time{
+
+.time {
     padding-left: 90px;
 }
-.dark_mode{
+
+.dark_mode {
     background-color: #222222;
     color: white;
 }
-.card_dark_mode{
+
+.card_dark_mode {
     border: 0.5px solid white;
 }
+
 @media screen and (max-width: 600px) {
-    .docyard_logo{
+    .docyard_logo {
         height: 30px;
     }
-    
+
+}
+
+#lightMode {
+    display: block;
+}
+
+.lm {
+    display: none;
+}
+
+.bdy {
+    background-color: #373737;
+}
+
+.bdy .head>p {
+    color: #9e6ea9;
+}
+
+.bdy .team1>p {
+    color: white;
+}
+
+.bdy p {
+    color: white;
+}
+
+.toggleSun {
+    width: 30px;
+}
+
+.toggleMoon {
+    width: 30px;
+}
+
+.toogleSun {
+    display: block;
+    position: absolute;
+    width: 30px;
+    z-index: 3;
+    margin-top: -10px;
+    border-radius: 50px;
+    transition: 400ms;
+}
+
+.toogleMoon {
+    display: block;
+    position: absolute;
+    width: 30px;
+    z-index: 2;
+    margin-top: -10px;
+    border-radius: 50px;
+    transition: 400ms;
 }

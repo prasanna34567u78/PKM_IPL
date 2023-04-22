@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="upcoming.css">
+    <link rel="stylesheet" href="upcoming.css">
     <link rel="website icon" cla5ss="tab_logo" type="png" href="docyardlogobg.png">
     <title>DocYard-Livescore</title>
 </head>
+
 <body>
     <header>
-    <ul>            
-        <a href="file:///home/rohan/Desktop/VS%20Code%20/DocYard/index.html" class="image_logo"><img src="docyardbg.png" class="docyard_logo"></a>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
+        <ul>
+            <a href="file:///home/rohan/Desktop/VS%20Code%20/DocYard/index.html" class="image_logo"><img
+                    src="docyardbg.png" class="docyard_logo"></a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li id="lightMode"><img class="toogleSun" id="toogleSun" src="sun.png" onclick="mode()"></li>
+            <li id="lightMode"><img class="toogleMoon" id="toogleMoon" src="moon.png" onclick="mode()"></li>
+        </ul>
     </header>
     <part-1>
         <div class="options">
-            <a id="live_score" href="index.html">Live</a>
+            <a id="live_score" href="index.html" onclick="choose()">Live</a>
             <a id="upcoming" href="upcoming.html">Upcoming</a>
             <a id="result" href="result.html">Result</a>
         </div>
@@ -33,4 +38,5 @@
     </main>
     <script src="index.js"></script>
 </body>
+
 </html>
